@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Display Contacts</title>
+<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">
+
+<!-- Optional theme -->
+<link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap-theme.min.css">
+</head>
+<body>
+<div class="page-header">
+  <center><h1>Contact management System</h1></center>
+</div>
+<div class="page-header">
+  <center><h4>Contacts Display</h4></center>
+</div>
+
+
+<center>
+<ul class="pagination">
+  <li><a href="#">&laquo;</a></li>
+  <li><a href="a">A</a></li><li><a href="b">B</a></li><li><a href="c">C</a></li><li><a href="d">D</a></li><li><a href="e">E</a></li>
+  <li><a href="f">F</a></li><li><a href="g">G</a></li><li><a href="h">H</a></li><li><li><a href="i">I</a></li><li><a href="j">J</a></li>
+  <li><a href="k">K</a></li><li><a href="l">L</a></li><li><a href="m">M</a></li><li><a href="n">N</a></li><li><a href="o">O</a></li>
+  <li><a href="p">P</a></li><li><a href="q">Q</a></li><li><a href="r">R</a></li><li><a href="s">S</a></li><li><a href="t">T</a></li>
+  <li><a href="u">U</a></li><li><a href="v">V</a></li><li><a href="w">W</a></li><li><a href="x">X</a></li><li><a href="y">Y</a></li>
+  <li><a href="Z">Z</a></li>
+  <li><a href="#">&raquo;</a></li>
+</ul></center>
+{% if users %}
+{% for contact_name,contact_second_name,contact_number,contact_email in users %}
+    <pre>First  Name  : {{ contact_name }}<br>Second Name  : {{ contact_second_name }}
+Contact No.  : {{ contact_number }}<br>Email ID     : {{ contact_email }}</pre><br>
+{% endfor %}
+{% else %}
+ <pre><center>No Contacts to Display</center></pre>
+{% endif %}
+<center>
+<ul class="pagination">
+  <li><a href="#">&laquo;</a></li>
+  <li><a href="a">A</a></li><li><a href="b">B</a></li><li><a href="c">C</a></li><li><a href="d">D</a></li><li><a href="e">E</a></li>
+  <li><a href="f">F</a></li><li><a href="g">G</a></li><li><a href="h">H</a></li><li><li><a href="i">I</a></li><li><a href="j">J</a></li>
+  <li><a href="k">K</a></li><li><a href="l">L</a></li><li><a href="m">M</a></li><li><a href="n">N</a></li><li><a href="o">O</a></li>
+  <li><a href="p">P</a></li><li><a href="q">Q</a></li><li><a href="r">R</a></li><li><a href="s">S</a></li><li><a href="t">T</a></li>
+  <li><a href="u">U</a></li><li><a href="v">V</a></li><li><a href="w">W</a></li><li><a href="x">X</a></li><li><a href="y">Y</a></li>
+  <li><a href="Z">Z</a></li>
+  <li><a href="#">&raquo;</a></li>
+</ul></center>
+
+
+<!-- Latest compiled and minified JavaScript -->
+<script src="//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
+</body>
+</html>

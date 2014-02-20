@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Add Contacts</title>
+<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">
+
+<!-- Optional theme -->
+<link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap-theme.min.css">
+  <script src="//code.jquery.com/jquery-1.9.1.js"></script>
+  <script src="//ajax.aspnetcdn.com/ajax/jquery.validate/1.9/jquery.validate.min.js"></script>
+  <script>
+  $(function() {
+  
+    // Setup form validation on the #register-form element
+    $("#add_contact_form").validate({
+    
+        // Specify the validation rules
+        rules: {
+            contact_first_name: "required",
+	    contact_number: "required"
+	               
+        },
+        
+        // Specify the validation error messages
+        messages: {
+            contact_first_name: "Please enter a First Name",
+            contact_number: "Please enter a Contact Number"
+        },
+        
+        submitHandler: function(form) {
+            form.submit();
+        }
+    });
+
+  });
+  
+  </script>  
+</head>
+<body>
+    <div class="page-header">
+ 	 <center><h1>Contact management System</h1></center>
+    </div>
+    
+
+    <br>
+<div class="col-xs-offset-4">
+	<form role="form" action="" method="post" id="add_contact_form"> {% csrf_token %}
+          <div class="col-sm-7"> 
+           <p><label for="id_contact_first_name" class="row-sm-7 control-label">First Name</label>
+              <input type="text" class="form-control" name= "contact_first_name"  id="id_contact_first_name" placeholder="Enter First Name">
+	   </p>
+          </div>
+          <div class="col-sm-7">
+           <p><label for="id_contact_second_name" class="row-sm-2 control-label">Second Name</label>
+              <input type="text" class="form-control" name="contact_second_name" id="id_contact_second_name" placeholder="Enter Second Name">
+           </p>
+          </div>
+          <div class="col-sm-7">
+           <p><label for="id_contact_number" class="row-sm-2 control-label">Contact Number</label>
+              <input type="text" class="form-control" name="contact_number" id="id_contact_number" placeholder="Enter Number">
+           </p>
+          </div>
+	  <div class="col-sm-7">
+           <p><label for="id_contact_email_id" class="row-sm-2 control-label">Email ID</label>
+              <input type="text" class="form-control" name="contact_email_id" id="id_contact_email_id" placeholder="Enter Email ID">
+           </p>
+           <button type="submit" class="btn btn-default">Add</button>
+          <a href="/display_contact/" style="text-decoration:none">
+              <button type="button" class="btn btn-default" >Display Contacts</button>
+          </a>
+         </div>   
+       </form>
+
+</div>
+{#    <form action="" method="post">{% csrf_token %}#}
+{#      {{ form.as_p }}#}
+{#     <input type="Submit" value="Submit">#}
+{#     </form>   #}
+
+<!-- Latest compiled and minified JavaScript -->
+<script src="//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
+</body>
+</html>
